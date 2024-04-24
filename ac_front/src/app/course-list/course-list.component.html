@@ -1,0 +1,8 @@
+<div *ngIf="courses$ | async as courses">
+    <div *ngFor="let course of courses">
+            <img src="" loading="lazy" class="card-img" alt="Хайповая фотография.">
+            <h3>{{ course.name }}</h3>
+            <p>{{ course.description }}</p>
+            <a [routerLink]="['/courses/']">Узнать больше<i class="fas fa-chevron-right"></i></a>
+    </div>
+</div>
