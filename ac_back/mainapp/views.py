@@ -13,7 +13,6 @@ from rest_framework.decorators import api_view
 from rest_framework.permissions import AllowAny
 
 class CourseList(APIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def get(self, request):
         courses = Course.objects.all()
@@ -76,24 +75,11 @@ class CategoryList(APIView):
 def add_category(request):
     name = request.data.get('name')
     description = request.data.get('description')
+    imageLink = request.data.get('imageLink')
 
-    if not name or not description:
-        return Response({'error': 'You must provide both name and description for the category'}, status=status.HTTP_400_BAD_REQUEST)
+    if not name or not description or not imageLink:
+        return Response({'error': 'You must provide name, description and link to image for the category'}, status=status.HTTP_400_BAD_REQUEST)
     
-    category = Category.objects.create(name=name, description=description)
+    category = Category.objects.create(name=name, description=description, imageLink=imageLink)
     
     return Response({'success': 'Category created successfully'}, status=status.HTTP_201_CREATED)
-
-
-
-@api_view(['POST'])
-def add_course(request):
-    name = request.data.get('name')
-    description = request.data.get('description')
-
-    if not name or not description:
-        return Response({'error': 'You must provide both name and description for the courses'}, status=status.HTTP_400_BAD_REQUEST)
-    
-    courses = Course.objects.create(name=name, description=description)
-    
-    return Response({'success': 'Courses created successfully'}, status=status.HTTP_201_CREATED)

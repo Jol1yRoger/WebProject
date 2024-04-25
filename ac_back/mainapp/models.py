@@ -12,6 +12,7 @@ class Category(models.Model):
         return self.name
     
 class Course(models.Model):
+    id = models.AutoField(primary_key=True)
     category = models.ForeignKey(Category, related_name='courses', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     description = models.TextField()
