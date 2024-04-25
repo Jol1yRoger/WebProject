@@ -1,8 +1,10 @@
-<div *ngIf="courses$ | async as courses">
-    <div *ngFor="let course of courses">
-            <img src="" loading="lazy" class="card-img" alt="Хайповая фотография.">
-            <h3>{{ course.name }}</h3>
-            <p>{{ course.description }}</p>
-            <a [routerLink]="['/courses/']">Узнать больше<i class="fas fa-chevron-right"></i></a>
-    </div>
+<div *ngIf="courses$ | async as courses" class="courses-container">
+  <div *ngFor="let course of courses" class="course-card">
+    <!-- Provides random pictures here (kinda effective :)) -->
+    <img src="https://source.unsplash.com/featured/?education" loading="lazy" class="course-img" alt="Course Image">
+    <h3 class="course-title">{{ course.title }}</h3>
+    <p class="course-description">{{ course.description }}</p>
+    <p class="course-price">{{ course.price }} $USDT</p>
+    <a [routerLink]="['/courses/']" class="buy-link">Купить этот курс<i class="fas fa-chevron-right"></i></a>
+  </div>
 </div>

@@ -10,9 +10,8 @@ import { CoursesService } from '../courses.service';
 export class CourseListComponent implements OnInit {
 
     courses$!: Observable<any[]>;
-  
     constructor(private coursesService: CoursesService) {}
-  
+
     ngOnInit(): void {
       this.courses$ = this.coursesService.getCourses();
     }

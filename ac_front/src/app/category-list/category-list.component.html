@@ -1,8 +1,8 @@
-<div *ngIf="categories$ | async as categories">
-        <div *ngFor="let category of categories">
-                <img src="" loading="lazy" class="card-img" alt="Хайповая фотография.">
+<div *ngIf="categories$ | async as categories" class="cards">
+        <div *ngFor="let category of categories" class="course-card">
+                <img [src]="category.imageLink" loading="lazy" alt="Хайповая фотография.">
                 <h3>{{ category.name }}</h3>
                 <p>{{ category.description }}</p>
-                <a [routerLink]="['/courses/']">Узнать больше<i class="fas fa-chevron-right"></i></a>
+                <a [routerLink]="['/courses']" [queryParams]="{ category: category.id }">Узнать больше<i class="fas fa-chevron-right"></i></a>
         </div>
 </div>

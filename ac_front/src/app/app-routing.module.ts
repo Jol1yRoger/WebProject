@@ -7,6 +7,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: '', component: CategoryListComponent },
   { path: 'categories', component: CategoryListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'courses', component: CourseListComponent },

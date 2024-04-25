@@ -10,41 +10,38 @@
 
         <link rel="stylesheet" href="app.component.css">
         <div class="container">
-            <nav class="nav-bar">
-                <div class="logo">
-                    <img src="../assets/AscendCrusaders.png" alt="">
-                    <!-- <img src="../AscendCrusaders.png" alt=""> -->
-                    <!-- <img alt="" itemprop="logo" class="c-image" src="../AscendCrusaders.png" role="presentation" aria-hidden="true" style="overflow-x: visible;"> -->
-                </div>
-                
-                <ul class="menu-left">
-                    <li><a [routerLink]="['/categories']">Categories</a></li>
-                    <li><a [routerLink]="['/courses']">Courses</a></li>
-                    <li><a [routerLink]="['/about-us']">About Us</a></li>
-                </ul>
-                <ul class="menu-right">
-                    <!-- <li><select name="microsoft">
-                        <option value="russkii">Продукты Microsoft</option>
-                    </select>
-                    </li> -->
-                    <li><a href="#">Поиск</a>
-                    <i class="fas fa-search" style="margin-left: 5px;"></i></li>
-                    <li><a [routerLink]="['/login']">Войти</a>
-                    <i class="fas fa-user-circle" style="margin-left: 5px;"></i></li>
-                </ul>
-            </nav>
-            <header class="main-area">
-                <div class="inner-content">
-                    <h1 style="margin-top: -200px;">Разработано для жизни —</h1>
-                    <h1> сегодня и в будущем</h1>
-                    <p style="margin-top: 30px;">Следующее поколение игр. Ваши цели. Друзья и семья. С<br> Windows 11 вы станете еще ближе к тому, что успели<br> полюбить.<br><br></p>
-                    <a class="btn" href="#">Проверьте, готов ли ваш ПК</a>
-                </div>
-            </header>
-            <i class='fa fa-pause'></i> <i class="fa fa-arrow-left" aria-hidden="true"></i> <i class="fa-solid fa-arrow-right"></i>
-            <section class="cards">
-              <router-outlet/>
-            </section>
+          <nav class="nav-bar">
+            <div class="logo"><a href="#">
+              <img src="../assets/AscendCrusaders.png" alt=""></a>
+            </div>
+
+            <ul class="menu-left">
+              <li><a [routerLink]="['/categories']">Categories</a></li>
+              <li><a [routerLink]="['/courses']">Courses</a></li>
+              <li><a [routerLink]="['/about-us']">About Us</a></li>
+            </ul>
+            <ul class="menu-right">
+              <li><a href="#">Search</a>
+                <i class="fas fa-search" style="margin-left: 5px;"></i></li>
+              <li><a [routerLink]="['/login']">Login</a>
+                <i class="fas fa-user-circle" style="margin-left: 5px;"></i></li>
+            </ul>
+          </nav>
+
+          <header class="main-area" *ngIf="pageService.isMainPage">
+            <div class="inner-content">
+              <h1 style="margin-top: -200px;">Developed for success people —</h1>
+              <h1> today and in future</h1>
+              <p style="margin-top: 30px;">Next generation of quality courses. With<br> <b>AscendCrusaders</b> team, you can achieve<br> incredible success in your life.<br><br></p>
+              <a href="javascript:void(0)" class="btn" (click)="scrollToSection()">Check, if you are ready</a>
+            </div>
+          </header>
+
+          <i class='fa fa-pause'></i> <i class="fa fa-arrow-left" aria-hidden="true"></i> <i class="fa-solid fa-arrow-right"></i>
+          <section #section>
+            <router-outlet/>
+          </section>
         </div>
+
     <!-- </body> -->
 <!-- </html> -->

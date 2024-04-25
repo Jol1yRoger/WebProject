@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiUrl = 'http://localhost:8000/categories';
+  private apiUrl = 'http://localhost:8000/categories/';
 
   constructor(private http: HttpClient) {}
 

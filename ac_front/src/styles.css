@@ -57,9 +57,8 @@ ul{
 .main-area{
     width: 100%;
     height: 500px;
-    background: url("https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Hero-Windows11-GlobalLaunch:VP2-859x540") no-repeat center center/cover; 
+    background: url("https://i.mycdn.me/getVideoPreview?id=2793070267036&idx=8&type=39&tkn=xMIq9WKwfaw3bbNjDrOBEt9z-kI&fn=vid_x") no-repeat center center/cover;
     display: flex;
-    align-items: left;
     text-align: left;
     justify-content: flex-end;
     flex-direction: column;
@@ -74,12 +73,22 @@ ul{
 }
 
 .inner-content h1 {
-    color: white;
+  background: linear-gradient(to right, #61ffe7, #0f93ff, #0045ff, #ff3399, #6666ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
 }
 
 .inner-content p{
-    color: white;
-    margin-top: -150px;
+  background: linear-gradient(to right, #61ffe7, #0f93ff, #0045ff, #ff3399, #6666ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+  margin-top: -150px;
 }
 .inner-content h1{
     font-size: 40px;
@@ -92,6 +101,7 @@ ul{
     font-size: 15px;
     font-weight: bold;
 }
+
 .cards{
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -100,7 +110,7 @@ ul{
     margin: 20px;
 }
 .cards img{
-    width: 100%;
+    width: 50%;
     margin-bottom: 10px;
 }
 
@@ -115,4 +125,96 @@ ul{
 .cards a, .cards i{
     color:#006788;
     padding-bottom: 5px;
+}
+
+.rainbow {
+  text-align: center;
+}
+.rainbow_text_animated {
+  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+.rainbow:hover {
+  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+@keyframes rainbow-animation-rev {
+  0% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+}
+@keyframes rainbow_animation {
+  0%,100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+
+.courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.course-card {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.course-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-description {
+  margin-bottom: 10px;
+}
+
+.course-price {
+  font-weight: bold;
+}
+
+.buy-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.buy-link:hover {
+  background-color: #0056b3; /* Цвет фона при наведении */
 }
